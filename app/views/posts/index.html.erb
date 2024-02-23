@@ -1,0 +1,13 @@
+<h1 class="mb-5">Posts</h1>
+<h3 class="mb-3">New Post</h3>
+
+<%= render 'form', post: Post.new %>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <p><%= link_to "Show this post", post, class: "btn btn-sm btn-outline-dark mt-3" %></p>
+  <% end %>
+</div>
+
+<%= link_to "New post", new_post_path, class: "btn btn-sm btn-outline-dark mt-3" %>
